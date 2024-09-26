@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Research Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Marketing Research Tool</h1>
+
+        <!-- API Key Section -->
+        <div class="api-key-section">
+            <label for="api-key">Enter your ChatGPT API Key:</label>
+            <input type="password" id="api-key" placeholder="API Key">
+            <button onclick="saveApiKey()">Save API Key</button>
+            <button onclick="clearApiKey()">Clear API Key</button>
+        </div>
+
+        <!-- Audience Profile Form -->
+        <div class="audience-profile-section">
+            <h2>Target Audience Profile</h2>
+            <form id="audienceForm">
+                <label for="country">Target Country:</label>
+                <input type="text" id="country" name="country" placeholder="e.g., United States" required>
+
+                <label for="description">Audience Description:</label>
+                <textarea id="description" name="description" placeholder="e.g., Age 25-40, tech enthusiasts, etc." required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="results-section">
+            <h2>Generated Audience Profile</h2>
+            <div id="audienceName"></div>
+            <div id="audienceDescription"></div>
+            <img id="audienceImage" src="" alt="Audience Image" style="display: none;">
+        </div>
+
+        <div id="error-message" class="error-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
