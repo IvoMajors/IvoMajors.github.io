@@ -29,7 +29,7 @@ document.getElementById('audienceForm').addEventListener('submit', async functio
     }
 
     const requestBody = {
-        model: "GPT-4o",  // Use your appropriate ChatGPT model
+        model: "gpt-4o",  // Use your appropriate ChatGPT model
         messages: [
             { role: "system", content: "You are a marketing expert generating audience profiles." },
             { role: "user", content: `Create a profile for an audience in ${country} with the following description: ${description}` }
