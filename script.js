@@ -45,20 +45,21 @@ document.getElementById('audienceForm').addEventListener('submit', async functio
             },
             body: JSON.stringify(requestBody)
         });
-
+    
         if (!response.ok) {
-            throw new Error("API request failed.");
+            const errorResponse = await response.json();
+            throw new Error(`API request failed: ${errorResponse.error.message}`);
         }
-
+    
         const data = await response.json();
         const generatedText = data.choices[0].message.content;
-
-        // Assuming the response has audience name, description, and image URL
+    
+        // Display the result
         displayResults(generatedText);
-
     } catch (error) {
         document.getElementById('error-message').innerText = "Error: " + error.message;
     }
+    
 });
 
 function displayResults(generatedText) {
